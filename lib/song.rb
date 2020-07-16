@@ -46,6 +46,7 @@ class Song
     self.class.column_names.each do |col_name|
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
+    #don't forget to format your dynamic SQL statements with single quotes so it will run properly!
     values.join(", ")
   end
 
@@ -59,6 +60,3 @@ class Song
   end
 
 end
-
-
-
